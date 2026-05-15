@@ -83,9 +83,9 @@ fig.add_trace(go.Scatter(x=df["Date"], y=df["Value"], name="Series 1", yaxis="y1
 fig.add_trace(go.Scatter(x=df["Date"], y=df["Value_2"], name="Series 2", yaxis="y2"))
 fig.update_layout(
     title="Dual Axis Plot",
-    xaxis=dict(title="Date"),
-    yaxis=dict(title="Series 1", side="left"),
-    yaxis2=dict(title="Series 2", overlaying="y", side="right"),
+    xaxis={"title": "Date"},
+    yaxis={"title": "Series 1", "side": "left"},
+    yaxis2={"title": "Series 2", "overlaying": "y", "side": "right"},
 )
 fig.show()
 
@@ -93,9 +93,9 @@ fig = go.Figure()
 fig.add_trace(go.Scatter(x=df["Date"], y=df["Value"], mode="lines", name="Value"))
 fig.update_layout(
     title="Time Series with Range Slider",
-    xaxis=dict(
-        rangeslider=dict(visible=True),
-        type="date"
-    )
+    xaxis={
+        "rangeslider": {"visible": True},
+        "type": "date"
+    }
 )
 fig.show()

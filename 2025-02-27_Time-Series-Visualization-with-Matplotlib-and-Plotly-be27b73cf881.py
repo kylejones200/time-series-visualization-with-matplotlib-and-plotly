@@ -8,8 +8,8 @@ import numpy as np
 import pandas as pd
 import plotly.graph_objects as go
 import seaborn as sns
-
 np.random.seed(42)
+
 time = pd.date_range(start="2023-01-01", periods=100, freq="D")
 data = {
     "Date": time,

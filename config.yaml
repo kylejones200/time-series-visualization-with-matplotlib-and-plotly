@@ -1,0 +1,18 @@
+logging:
+  level: INFO
+
+data:
+  seed: 42
+  periods: 100
+  start: "2023-01-01"
+  freq: D
+  moving_average_window: 7
+  decomposition_period: 30
+
+output:
+  figures_dir: outputs/figures
+  plotly_dir: outputs/plotly
+  results_path: outputs/results.json
+  figure_format: png
+  figure_dpi: 120
+  show: false

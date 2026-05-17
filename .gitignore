@@ -1,32 +1,47 @@
-# Python
+# Python bytecode
 __pycache__/
-*.pyc
-*.pyo
-.venv/
-venv/
-env/
-*.egg-info/
-dist/
-build/
-.ipynb_checkpoints/
-
-# Node
-node_modules/
+*.py[cod]
+*$py.class
+# Secrets
 .env
-.env.local
-
-# macOS
-.DS_Store
-
-# Editors
-.vscode/
-.idea/
-*.swp
-# Secrets 
 .env.*
 !.env.example
+.env.local
 credentials.json
 secrets.json
 service-account*.json
 *.pem
 *.key
+# Python / packaging
+.venv/
+venv/
+*.egg-info/
+dist/
+build/
+# uv
+.python-version
+# Local overrides
+config.local.yaml
+# Generated outputs (keep directory layout)
+outputs/**
+!outputs/figures/
+!outputs/figures/.gitkeep
+!outputs/plotly/
+!outputs/plotly/.gitkeep
+# Jupyter
+.ipynb_checkpoints/
+# Node (if used)
+node_modules/
+# OS / editors
+.DS_Store
+.idea/
+.vscode/
+*.swp
+# pytest / ruff
+.pytest_cache/
+.ruff_cache/
+# Legacy export artifacts (now under outputs/)
+moving_average_plot.png
+seasonal_decomposition_plot.png
+heatmap_daily_values.png
+multiple_time_series_plot.png

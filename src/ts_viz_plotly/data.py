@@ -14,7 +14,6 @@ def make_synthetic_series(cfg: dict[str, Any]) -> pd.DataFrame:
     start = str(data_cfg.get("start", "2023-01-01"))
     freq = str(data_cfg.get("freq", "D"))
     window = int(data_cfg.get("moving_average_window", 7))
-
     rng = np.random.default_rng(seed)
     time = pd.date_range(start=start, periods=periods, freq=freq)
     values = (

@@ -51,7 +51,6 @@ def plot_seasonal_decomposition(
     show: bool,
 ) -> None:
     decomposed = seasonal_decompose(df["Value"], period=period, model="additive")
-
     plt.figure(figsize=(10, 8))
     plt.subplot(311)
     plt.plot(df["Date"], decomposed.trend, label="Trend", color="blue")
@@ -161,7 +160,6 @@ def run_all_plots(df: pd.DataFrame, cfg: dict[str, Any]) -> dict[str, Path]:
     dpi = int(out_cfg.get("figure_dpi", 120))
     show = bool(out_cfg.get("show", False))
     period = int(data_cfg.get("decomposition_period", 30))
-
     if not figures_dir.is_absolute():
         from ts_viz_plotly.paths import resolve_project_path
 
@@ -169,7 +167,6 @@ def run_all_plots(df: pd.DataFrame, cfg: dict[str, Any]) -> dict[str, Path]:
         plotly_dir = resolve_project_path(plotly_dir)
 
     figures: dict[str, Path] = {}
-
     static_specs = [
         ("moving_average", plot_moving_average),
         ("seasonal_decomposition", plot_seasonal_decomposition),
@@ -179,9 +176,9 @@ def run_all_plots(df: pd.DataFrame, cfg: dict[str, Any]) -> dict[str, Path]:
     for name, func in static_specs:
         out_path = figures_dir / f"{name}.{fmt}"
         if name == "seasonal_decomposition":
-            func(df, period=period, path=out_path, dpi=dpi, show=show)
+            func(df, period=period, path=out_path, dpi=dpi, show=show)  # type: ignore[operator]
         else:
-            func(df, path=out_path, dpi=dpi, show=show)
+            func(df, path=out_path, dpi=dpi, show=show)  # type: ignore[operator]
         figures[name] = out_path
 
     plotly_specs = [

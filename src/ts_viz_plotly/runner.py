@@ -19,14 +19,11 @@ def run(config_path: Path | str | None = None) -> dict[str, Any]:
     path = Path(config_path) if config_path else DEFAULT_CONFIG_PATH
     cfg = load_config(path)
     configure_logging(cfg)
-
     df = make_synthetic_series(cfg)
     figures = run_all_plots(df, cfg)
-
     out_cfg = cfg.get("output") or {}
     results_path = resolve_project_path(out_cfg.get("results_path", "outputs/results.json"))
     results_path.parent.mkdir(parents=True, exist_ok=True)
-
     payload = {
         "version": __version__,
         "rows": len(df),
@@ -38,7 +35,6 @@ def run(config_path: Path | str | None = None) -> dict[str, Any]:
     }
     results_path.write_text(json.dumps(payload, indent=2), encoding="utf-8")
     logger.info("Wrote %s (%d figures)", results_path, len(figures))
-
     return {"df": df, "figures": figures, "results_path": results_path}
 
 

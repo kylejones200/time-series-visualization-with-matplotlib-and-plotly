@@ -30,11 +30,9 @@ def test_run_pipeline_writes_outputs(headless_config: Path) -> None:
     result = run(headless_config)
     results_path = result["results_path"]
     assert results_path.is_file()
-
     payload = json.loads(results_path.read_text(encoding="utf-8"))
     assert payload["rows"] == 100
     assert len(payload["figures"]) == 7
-
     for fig_path in result["figures"].values():
         assert fig_path.is_file()
         assert fig_path.stat().st_size > 0

@@ -5,6 +5,14 @@ Medium: [Time Series Visualization with Matplotlib and Plotly](https://medium.co
 
 Matplotlib and Plotly examples for moving averages, seasonal decomposition, heatmaps, and interactive charts. Companion code for the article (`article.md`).
 
+## Business context
+
+Visualizing time series data reveals patterns, trends, seasonality, and anomalies that are not immediately visible in raw data. Basic line plots offer a starting point, but advanced visualizations provide deeper insights. This chapter explores intermediate techniques for time series visualization using Matplotlib and Plotly. It focuses on interactive features, customizations, and specialized plots that highlight complex patterns and relationships in the data.
+
+Advanced visualizations show seasonality, trends, and periodicity more clearly. They also allow comparisons between multiple time series or features on a single view. Plotly adds interactivity, making data exploration more dynamic and engaging. These visualizations simplify complex data stories, allowing executives and stakeholders to understand key insights quickly.
+
+Matplotlib is the most widely used visualization library in Python. It provides powerful tools for creating detailed and publication-quality graphs. In this section, we use a sample time series dataset to demonstrate various visualization techniques beyond basic line graphs.
+
 ## Quick start
 
 Requires [uv](https://docs.astral.sh/uv/).

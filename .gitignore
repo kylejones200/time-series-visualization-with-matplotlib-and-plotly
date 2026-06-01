@@ -45,3 +45,8 @@ moving_average_plot.png
 seasonal_decomposition_plot.png
 heatmap_daily_values.png
 multiple_time_series_plot.png
+# macOS metadata on external volumes
+._*
+.AppleDouble
+# Backup files (may contain secrets)
+*.bak
